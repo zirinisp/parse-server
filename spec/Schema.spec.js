@@ -808,7 +808,7 @@ describe('Class Level Permissions for requiredAuth', () => {
      user.set("password", "world");
      return user.signUp(null);
   }  
-  it('required auth test find', (done) => {
+  it_exclude_dbs(['postgres'])('required auth test find', (done) => {
     config.database.loadSchema().then((schema) => {
         // Just to create a valid class
         return schema.validateObject('Stuff', {foo: 'bar'});
@@ -830,7 +830,7 @@ describe('Class Level Permissions for requiredAuth', () => {
       });
   });
   
-  it('required auth test find authenticated', (done) => {
+  it_exclude_dbs(['postgres'])('required auth test find authenticated', (done) => {
     config.database.loadSchema().then((schema) => {
         // Just to create a valid class
         return schema.validateObject('Stuff', {foo: 'bar'});
@@ -855,7 +855,7 @@ describe('Class Level Permissions for requiredAuth', () => {
       });
   });
   
-  it('required auth test create authenticated', (done) => {
+  it_exclude_dbs(['postgres'])('required auth test create authenticated', (done) => {
     config.database.loadSchema().then((schema) => {
         // Just to create a valid class
         return schema.validateObject('Stuff', {foo: 'bar'});
@@ -880,7 +880,7 @@ describe('Class Level Permissions for requiredAuth', () => {
       });
   });
   
-  it('required auth test create authenticated', (done) => {
+  it_exclude_dbs(['postgres'])('required auth test create authenticated', (done) => {
     config.database.loadSchema().then((schema) => {
         // Just to create a valid class
         return schema.validateObject('Stuff', {foo: 'bar'});
@@ -903,7 +903,7 @@ describe('Class Level Permissions for requiredAuth', () => {
       });
   });
   
-  it('required auth test create/get/update/delete authenticated', (done) => {
+  it_exclude_dbs(['postgres'])('required auth test create/get/update/delete authenticated', (done) => {
     config.database.loadSchema().then((schema) => {
       // Just to create a valid class
       return schema.validateObject('Stuff', {foo: 'bar'});
@@ -944,7 +944,7 @@ describe('Class Level Permissions for requiredAuth', () => {
     });
   });
   
-  it('required auth test create/get/update/delete not authenitcated', (done) => {
+  it_exclude_dbs(['postgres'])('required auth test create/get/update/delete not authenitcated', (done) => {
     config.database.loadSchema().then((schema) => {
       // Just to create a valid class
       return schema.validateObject('Stuff', {foo: 'bar'});
@@ -979,7 +979,7 @@ describe('Class Level Permissions for requiredAuth', () => {
     });
   });
   
-  it('required auth test create/get/update/delete not authenitcated', (done) => {
+  it_exclude_dbs(['postgres'])('required auth test create/get/update/delete not authenitcated', (done) => {
     config.database.loadSchema().then((schema) => {
       // Just to create a valid class
       return schema.validateObject('Stuff', {foo: 'bar'});
