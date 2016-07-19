@@ -932,7 +932,7 @@ describe('Class Level Permissions for requiredAuth', () => {
         return query.get(stuff.id);
       });
     }).then((gotStuff) => {
-      gotStuff.save({'foo': 'baz'}).then(() => {
+      return gotStuff.save({'foo': 'baz'}).then(() => {
           return gotStuff.destroy();
       })
     }).then(() => {
