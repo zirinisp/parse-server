@@ -12,15 +12,19 @@ let views = path.resolve(__dirname, '../../views');
 export class PublicAPIRouter extends PromiseRouter {
 
   verifyEmail(req) {
+    console.log("**** Inside PublicAPIRouter Verify Email");
+
     let { token, username }= req.query;
     let appId = req.params.appId;
     let config = new Config(appId);
 
     if (!config.publicServerURL) {
+      console.log("**** missingPublicServerURL");
       return this.missingPublicServerURL();
     }
 
     if (!token || !username) {
+      console.log("**** !token !username");
       return this.invalidLink(req);
     }
 

@@ -43,9 +43,11 @@ export class UserController extends AdaptableController {
   }
 
   verifyEmail(username, token) {
+    console.log("**** Inside Verify EMail");
     if (!this.shouldVerifyEmails) {
       // Trying to verify email when not enabled
       // TODO: Better error here.
+      console.log("**** Should Verify Failed");
       throw undefined;
     }
 
